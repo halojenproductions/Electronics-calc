@@ -182,7 +182,7 @@ export default class ResCalc extends React.Component {
 		}
 		//console.log(newState);
 
-		debugger;
+		//debugger;
 
 		this.setState(newState);
 	}

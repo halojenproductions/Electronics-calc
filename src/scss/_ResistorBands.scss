@@ -9,6 +9,17 @@ $rbc-7: violet;
 $rbc-8: grey;
 $rbc-9: white;
 
+$rgc-0: hsl(hue($rbc-0),saturation($rbc-0),80);
+$rgc-1: hsl(hue($rbc-1),saturation($rbc-1),80);
+$rgc-2: hsl(hue($rbc-2),saturation($rbc-2),80);
+$rgc-3: hsl(hue($rbc-3),saturation($rbc-3),80);
+$rgc-4: hsl(hue($rbc-4),saturation($rbc-4),80);
+$rgc-5: hsl(hue($rbc-5),saturation($rbc-5),80);
+$rgc-6: hsl(hue($rbc-6),saturation($rbc-6),80);
+$rgc-7: hsl(hue($rbc-7),saturation($rbc-7),80);
+$rgc-8: hsl(hue($rbc-8),saturation($rbc-8),80);
+$rgc-9: hsl(hue($rbc-9),saturation($rbc-9),80);
+
 $rfc-0: white;
 $rfc-1: white;
 $rfc-2: white;
@@ -27,14 +38,14 @@ $slide-time: 500ms;
 	background-color: darken($bg,10%);
 }
 
-@mixin Set_Active($fg,$bg) {
-	$s: lightness($bg);
+@mixin Set_Active($fg,$bg,$glow) {
+	// $s: lightness($bg);
+	// @if saturation($bg) == 0 {
+	// 	$s: 0;
+	// }
 
-	@if saturation($bg) == 0 {
-		$s: 0;
-	}
-
-	box-shadow: hsl(hue($bg),$s*2,80) 0 0 10px 2px;
+	//box-shadow: hsl(hue($bg),$s*2,80) 0 0 10px 2px;
+	box-shadow: $glow 0 0 10px 2px;
 	text-shadow: 0 0 8px white;
 	color: $fg;
 	background-color: lighten($bg,10%);
@@ -81,7 +92,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-0,$rbc-0);
+			@include Set_Active($rfc-0,$rbc-0,$rgc-0);
 		}
 	}
 
@@ -91,7 +102,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-1,$rbc-1);
+			@include Set_Active($rfc-1,$rbc-1,$rgc-1);
 		}
 	}
 
@@ -101,7 +112,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-2,$rbc-2);
+			@include Set_Active($rfc-2,$rbc-2,$rgc-2);
 		}
 	}
 
@@ -111,7 +122,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-3,$rbc-3);
+			@include Set_Active($rfc-3,$rbc-3,$rgc-3);
 		}
 	}
 
@@ -121,7 +132,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-4,$rbc-4);
+			@include Set_Active($rfc-4,$rbc-4,$rgc-4);
 		}
 	}
 
@@ -131,7 +142,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-5,$rbc-5);
+			@include Set_Active($rfc-5,$rbc-5,$rgc-5);
 		}
 	}
 
@@ -141,7 +152,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-6,$rbc-6);
+			@include Set_Active($rfc-6,$rbc-6,$rgc-6);
 		}
 	}
 
@@ -151,7 +162,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-7,$rbc-7);
+			@include Set_Active($rfc-7,$rbc-7,$rgc-7);
 		}
 	}
 
@@ -161,7 +172,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-8,$rbc-8);
+			@include Set_Active($rfc-8,$rbc-8,$rgc-8);
 		}
 	}
 
@@ -172,7 +183,7 @@ $slide-time: 500ms;
 		}
 
 		&.active button {
-			@include Set_Active($rfc-9,$rbc-9);
+			@include Set_Active($rfc-9,$rbc-9,$rgc-9);
 			color: lighten($rfc-9,10%);
 		}
 	}

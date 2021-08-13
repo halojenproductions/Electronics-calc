@@ -113,6 +113,7 @@ const config = {
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: path.resolve(__dirname, "src/index.html"),
+			favicon: "src/favicon.ico"
 		}),
 		...isProd ? prodPlugins : []
 	],
